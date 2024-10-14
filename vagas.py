@@ -1,15 +1,13 @@
-import arc
 import nerdin
 import csv
 from jobspy import scrape_jobs
-import progress
+
 def obtem_vagas():
     cidade = "Rio de Janeiro"
-    resposta_arc = arc.pega_vagas()
 
     resposta_nerdin = nerdin.main()
 
-    resposta_scrapping = resposta_arc + resposta_nerdin
+    resposta_scrapping = resposta_nerdin
 
     jobs = scrape_jobs(
         site_name=["indeed", "linkedin", "zip_recruiter", "glassdoor"],
